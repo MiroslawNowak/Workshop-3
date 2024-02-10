@@ -22,8 +22,9 @@ public class UserAdd extends HttpServlet {
         User user = new User(request.getParameter("userName"),
                             request.getParameter("userEmail"),
                             request.getParameter("userPassword"));
+
         UserDao userDao = new UserDao();
         userDao.create(user);
-        response.sendRedirect("/user/list");
+        response.sendRedirect(request.getContextPath() + "/user/list");
     }
 }

@@ -14,11 +14,6 @@ public class UserDelete extends HttpServlet {
         UserDao userDao = new UserDao();
         int id = Integer.parseInt(request.getParameter("id"));
         userDao.delete(id);
-        response.sendRedirect("/user/list");
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        response.sendRedirect(request.getContextPath() + "/user/list");
     }
 }
