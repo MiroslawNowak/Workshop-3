@@ -22,8 +22,7 @@ public class UserEdit extends HttpServlet {
         request.setAttribute("userEmail", user.getEmail());
         request.setAttribute("userPassword", user.getPassword());
 
-        request.getRequestDispatcher("/users/edit.jsp").forward(request, response);
-
+        request.getRequestDispatcher(request.getContextPath() + "/users/edit.jsp").forward(request, response);
     }
 
     @Override
@@ -39,6 +38,5 @@ public class UserEdit extends HttpServlet {
         userDao.update(user);
 
         response.sendRedirect(request.getContextPath() + "/user/list");
-
     }
 }
