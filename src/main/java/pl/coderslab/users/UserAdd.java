@@ -12,11 +12,13 @@ import java.io.IOException;
 public class UserAdd extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         request.getRequestDispatcher("/users/add.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         User user = new User(request.getParameter("userName"),
                             request.getParameter("userEmail"),
                             request.getParameter("userPassword"));
